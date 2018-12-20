@@ -30,7 +30,7 @@ def qty_by_feature(df, columns):
         for item in df[column].unique():
             pct = df[df[column] == item]['clicked'].sum() / df[df[column] == item].shape[0]
             percents[item] = pct
-        fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(18,6))
+        fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(12,4))
         ax[0].bar(x=df[column].value_counts().index, height=df[column].value_counts().values, color="orange")
         ax[0].set_title("Users who Received Email by {}".format(column))
         ax[0].set_xlabel("Value")
@@ -58,7 +58,7 @@ def pct_by_feature(df, columns):
         for item in df[column].unique():
             pct = df[df[column] == item]['clicked'].sum() / df[df[column] == item].shape[0]
             percents[item] = pct
-        plt.figure(figsize=(9,6))
+        plt.figure(figsize=(6,4))
         plt.bar(x=percents.keys(), height=percents.values(), color="green", alpha=0.7)
         plt.title("Pct Who Clicked by {}".format(column))
         plt.xlabel("Value")
