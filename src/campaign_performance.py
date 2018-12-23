@@ -59,7 +59,7 @@ def pct_by_feature(df, columns):
             pct = df[df[column] == item]['clicked'].sum() / df[df[column] == item].shape[0]
             percents[item] = pct
         plt.figure(figsize=(6,4))
-        plt.bar(x=percents.keys(), height=percents.values(), color="green", alpha=0.7)
+        plt.bar(x=percents.keys(), height=percents.values(), color="red", alpha=0.7)
         plt.title("Pct Who Clicked by {}".format(column))
         plt.xlabel("Value")
         plt.ylabel("Qty")
